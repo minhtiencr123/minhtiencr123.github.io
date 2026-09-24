@@ -1,128 +1,22 @@
 <!doctype html>
 <html lang="vi">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hướng dẫn fix thông báo Xiaomi bằng Shizuku | Xiaomi Toolkit</title>
-  <meta name="description" content="Hướng dẫn chi tiết fix thông báo Xiaomi nội địa Trung Quốc: bật Tùy chọn nhà phát triển, USB debugging, USB debugging (Security settings), ghép nối Wi‑Fi và kích hoạt Shizuku để dùng Xiaomi Toolkit.">
-  <meta name="robots" content="index,follow">
-  <link rel="canonical" href="https://minhtiencr123.github.io/huong-dan-fix-thong-bao-xiaomi.html">
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="Hướng dẫn fix thông báo Xiaomi bằng Shizuku | Xiaomi Toolkit">
-  <meta property="og:description" content="Các bước đầy đủ cho máy Xiaomi MIUI/HyperOS, đặc biệt ROM nội địa Trung Quốc.">
-  <meta property="og:url" content="https://minhtiencr123.github.io/huong-dan-fix-thong-bao-xiaomi.html">
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"HowTo",
-    "name":"Hướng dẫn fix thông báo Xiaomi bằng Shizuku",
-    "description":"Bật quyền cần thiết, ghép nối Shizuku qua Wi-Fi và chạy Xiaomi Toolkit trên MIUI/HyperOS.",
-    "totalTime":"PT15M",
-    "tool":[{"@type":"HowToTool","name":"Shizuku"},{"@type":"HowToTool","name":"Xiaomi Toolkit"}],
-    "step":[
-      {"@type":"HowToStep","name":"Bật Tùy chọn nhà phát triển","text":"Vào Cài đặt > Giới thiệu điện thoại và chạm nhiều lần vào phiên bản MIUI hoặc HyperOS."},
-      {"@type":"HowToStep","name":"Bật USB debugging","text":"Mở Tùy chọn nhà phát triển và bật Gỡ lỗi USB."},
-      {"@type":"HowToStep","name":"Bật USB debugging Security settings","text":"Bật Gỡ lỗi USB (Cài đặt bảo mật) nếu mục này có trên máy Xiaomi."},
-      {"@type":"HowToStep","name":"Ghép nối Shizuku qua Wi-Fi","text":"Mở Gỡ lỗi không dây, chọn ghép nối bằng mã ghép nối rồi nhập mã trong Shizuku."},
-      {"@type":"HowToStep","name":"Kích hoạt Shizuku","text":"Trong Shizuku chọn khởi động bằng gỡ lỗi không dây và chờ trạng thái đang chạy."},
-      {"@type":"HowToStep","name":"Chạy Xiaomi Toolkit","text":"Cấp quyền Shizuku cho Xiaomi Toolkit, mở Tối ưu và Bảo vệ thông báo rồi kiểm tra lại hệ thống."}
-    ]
-  }
-  </script>
-  <style>
-    :root{--ink:#172033;--muted:#566176;--accent:#b42318;--paper:#f6f7fb;--card:#fff;--line:#e2e6ee}
-    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.7 system-ui,-apple-system,"Segoe UI",sans-serif}
-    main{max-width:900px;margin:28px auto 60px;padding:0 22px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:clamp(24px,5vw,46px);margin-bottom:20px}
-    h1{font-size:clamp(32px,5vw,52px);line-height:1.15;margin:8px 0 18px;letter-spacing:-.03em}h2{font-size:27px;line-height:1.3;margin-top:0}h3{font-size:20px;margin-bottom:6px}
-    p,li{color:var(--muted)}.eyebrow{color:var(--accent);font-weight:750;letter-spacing:.05em;text-transform:uppercase;font-size:13px}
-    .note{border-left:4px solid var(--accent);background:#fff4f2;padding:14px 16px;margin:18px 0}.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}.button{display:inline-block;background:#1b263b;color:#fff;padding:10px 15px;border-radius:9px;text-decoration:none;font-weight:700}.button.alt{background:#edf2fa;color:#174ea6}
-    code{background:#eef1f6;border-radius:4px;padding:2px 5px}footer{max-width:900px;margin:auto;padding:0 22px 32px;color:var(--muted);font-size:14px}
-  </style>
-</head>
-<body>
-<main>
-  <article class="card">
-    <p class="eyebrow">Xiaomi Toolkit · hướng dẫn tiếng Việt</p>
-    <h1>Hướng dẫn fix thông báo Xiaomi bằng Shizuku</h1>
-    <p>Nếu máy Xiaomi bị chậm, mất hoặc không hiện thông báo, hãy làm lần lượt các bước dưới đây. Hướng dẫn phù hợp với MIUI và HyperOS, đặc biệt các máy Xiaomi nội địa Trung Quốc. Xiaomi Toolkit hoạt động qua Shizuku và không cần root.</p>
-    <div class="links"><a class="button" href="https://github.com/minhtiencr123/Xiaomi-Toolkit">Mở Xiaomi Toolkit trên GitHub</a><a class="button alt" href="https://github.com/minhtiencr123/Xiaomi-Toolkit/releases">Tải APK mới nhất</a></div>
-  </article>
-
-  <section class="card">
-    <h2>Chuẩn bị trước khi làm</h2>
-    <ul>
-      <li>Điện thoại Xiaomi đang chạy MIUI hoặc HyperOS.</li>
-      <li>Cài <a href="https://shizuku.rikka.app/download/">Shizuku</a> và Xiaomi Toolkit.</li>
-      <li>Kết nối Wi‑Fi ổn định. Một số bản ROM yêu cầu đăng nhập tài khoản Xiaomi để bật mục cài đặt bảo mật.</li>
-      <li>Đặt tên các mục theo ngôn ngữ máy. “USB debugging (Security settings)” có thể hiện là “Gỡ lỗi USB (Cài đặt bảo mật)”.</li>
-    </ul>
-  </section>
-
-  <section class="card">
-    <h2>1. Bật Tùy chọn nhà phát triển</h2>
-    <ol>
-      <li>Mở <strong>Cài đặt</strong> → <strong>Giới thiệu điện thoại</strong>.</li>
-      <li>Chạm liên tiếp khoảng 7 lần vào <strong>Phiên bản MIUI</strong> hoặc <strong>Phiên bản HyperOS</strong>.</li>
-      <li>Khi máy báo đã bật chế độ nhà phát triển, quay lại Cài đặt.</li>
-      <li>Mở <strong>Cài đặt bổ sung</strong> → <strong>Tùy chọn nhà phát triển</strong>. Một số máy đặt mục này trong <strong>Hệ thống</strong>.</li>
-    </ol>
-  </section>
-
-  <section class="card">
-    <h2>2. Bật đúng các quyền gỡ lỗi USB</h2>
-    <h3>USB debugging</h3>
-    <p>Trong <strong>Tùy chọn nhà phát triển</strong>, bật <strong>Gỡ lỗi USB</strong> rồi đọc và chấp nhận cảnh báo.</p>
-    <h3>USB debugging (Security settings)</h3>
-    <p>Bật thêm <strong>Gỡ lỗi USB (Cài đặt bảo mật)</strong>. Trên nhiều máy Xiaomi, đây là mục bị bỏ qua khiến ghép nối xong nhưng Shizuku khởi động bị treo hoặc Xiaomi Toolkit không thực hiện được thao tác hệ thống.</p>
-    <div class="note"><strong>Nếu không thấy mục này:</strong> tên có thể khác theo bản MIUI/HyperOS. Hãy tìm “security settings” hoặc “cài đặt bảo mật” trong Tùy chọn nhà phát triển, kết nối Internet và đăng nhập tài khoản Xiaomi nếu máy yêu cầu. Không phải model hoặc ROM nào cũng cung cấp mục này.</div>
-  </section>
-
-  <section class="card">
-    <h2>3. Ghép nối Shizuku qua Wi‑Fi</h2>
-    <ol>
-      <li>Trong <strong>Tùy chọn nhà phát triển</strong>, bật <strong>Gỡ lỗi không dây</strong> (Wireless debugging).</li>
-      <li>Chạm vào <strong>Gỡ lỗi không dây</strong> → <strong>Ghép nối thiết bị bằng mã ghép nối</strong>.</li>
-      <li>Mở ứng dụng <strong>Shizuku</strong>, vào phần ghép nối qua gỡ lỗi không dây và chọn ghép nối bằng mã.</li>
-      <li>Nhập mã 6 chữ số đang hiện trên màn hình Xiaomi. Nếu mã hết hạn, tạo mã mới rồi nhập lại.</li>
-      <li>Khi ghép nối thành công, quay lại màn hình chính của Shizuku.</li>
-    </ol>
-  </section>
-
-  <section class="card">
-    <h2>4. Kích hoạt Shizuku</h2>
-    <ol>
-      <li>Trong Shizuku, chọn <strong>Khởi động qua gỡ lỗi không dây</strong> (Start via Wireless debugging).</li>
-      <li>Chờ đến khi Shizuku báo đang chạy.</li>
-      <li>Mở Xiaomi Toolkit. Khi Android hỏi cấp quyền Shizuku, chọn <strong>Cho phép</strong>.</li>
-      <li>Nếu vừa khởi động lại máy, Shizuku có thể cần được kích hoạt lại tùy phiên bản Android và ROM.</li>
-    </ol>
-    <div class="note"><strong>Shizuku bị treo khi bắt đầu:</strong> kiểm tra lại cả Gỡ lỗi USB và Gỡ lỗi USB (Cài đặt bảo mật), giữ Gỡ lỗi không dây đang bật, ghép nối lại bằng mã mới và mở lại Shizuku trước khi mở Xiaomi Toolkit.</div>
-  </section>
-
-  <section class="card">
-    <h2>5. Dùng Xiaomi Toolkit để fix thông báo</h2>
-    <ol>
-      <li>Mở Xiaomi Toolkit và kiểm tra trạng thái Shizuku đã kết nối.</li>
-      <li>Vào <strong>Tối ưu</strong> để xử lý giới hạn chạy nền, tiết kiệm pin, tự khởi chạy và dữ liệu nền.</li>
-      <li>Vào <strong>Bảo vệ thông báo</strong>, chọn Gmail, Messenger, Zalo, ứng dụng ngân hàng và các ứng dụng cần nhận thông báo.</li>
-      <li>Vào <strong>Kiểm tra</strong> để xem lại quyền thông báo và trạng thái ứng dụng.</li>
-      <li>Khởi động lại máy nếu ứng dụng yêu cầu, sau đó gửi thử một thông báo để kiểm tra.</li>
-    </ol>
-  </section>
-
-  <section class="card">
-    <h2>Lỗi thường gặp</h2>
-    <h3>Shizuku báo chưa chạy</h3><p>Bật lại Gỡ lỗi không dây, ghép nối bằng mã mới, sau đó chọn khởi động Shizuku lại.</p>
-    <h3>Xiaomi Toolkit không nhận quyền</h3><p>Mở Shizuku trước, vào danh sách ứng dụng được cấp quyền và cho phép Xiaomi Toolkit. Nếu vẫn lỗi, tắt rồi bật lại Gỡ lỗi không dây.</p>
-    <h3>Thông báo vẫn chậm sau khi tối ưu</h3><p>Kiểm tra từng ứng dụng trong Tối ưu và Bảo vệ thông báo, đồng thời kiểm tra lại cài đặt thông báo riêng của ứng dụng. Tên mục có thể khác nhau giữa các model và phiên bản MIUI/HyperOS.</p>
-  </section>
-
-  <section class="card">
-    <h2>Tải Xiaomi Toolkit</h2>
-    <p>Đọc README để xem đầy đủ chức năng và tải bản phát hành mới nhất từ GitHub Releases.</p>
-    <div class="links"><a class="button" href="https://github.com/minhtiencr123/Xiaomi-Toolkit/releases">GitHub Releases</a><a class="button alt" href="https://github.com/minhtiencr123/Xiaomi-Toolkit">README Xiaomi Toolkit</a></div>
-  </section>
-</main>
-<footer>Hướng dẫn fix thông báo Xiaomi · Xiaomi Toolkit GitHub · Không cần root</footer>
-</body>
-</html>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hướng dẫn kích hoạt Shizuku để chạy Xiaomi Toolkit</title>
+<meta name="description" content="Hướng dẫn chi tiết bật Tùy chọn nhà phát triển, Gỡ lỗi USB, Gỡ lỗi USB (Cài đặt bảo mật), ghép nối và kích hoạt Shizuku để chạy Xiaomi Toolkit trên điện thoại Xiaomi.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://minhtiencr123.github.io/huong-dan-fix-thong-bao-xiaomi.html">
+<meta property="og:type" content="article"><meta property="og:title" content="Hướng dẫn kích hoạt Shizuku để chạy Xiaomi Toolkit"><meta property="og:description" content="Các bước bật quyền, ghép nối và kích hoạt Shizuku để chạy Xiaomi Toolkit trên MIUI/HyperOS."><meta property="og:url" content="https://minhtiencr123.github.io/huong-dan-fix-thong-bao-xiaomi.html">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"Hướng dẫn kích hoạt Shizuku để chạy Xiaomi Toolkit","description":"Bật quyền cần thiết, ghép nối và kích hoạt Shizuku để chạy Xiaomi Toolkit trên MIUI/HyperOS.","totalTime":"PT15M","tool":[{"@type":"HowToTool","name":"Shizuku"},{"@type":"HowToTool","name":"Xiaomi Toolkit"}],"step":[{"@type":"HowToStep","name":"Bật Tùy chọn nhà phát triển","text":"Vào Cài đặt > Giới thiệu điện thoại và chạm nhiều lần vào phiên bản MIUI hoặc HyperOS."},{"@type":"HowToStep","name":"Bật các mục gỡ lỗi","text":"Bật Gỡ lỗi USB, Gỡ lỗi USB (Cài đặt bảo mật) và Gỡ lỗi không dây trong Tùy chọn nhà phát triển."},{"@type":"HowToStep","name":"Ghép nối Shizuku","text":"Chạm vào Gỡ lỗi không dây, chọn Ghép nối thiết bị bằng mã ghép nối, nhập mã 6 chữ số trong thông báo rồi nhấn Ghép nối."},{"@type":"HowToStep","name":"Bắt đầu Shizuku","text":"Vào lại Shizuku, nhấn Bắt đầu và chờ đến khi Shizuku chạy xong."},{"@type":"HowToStep","name":"Dùng Xiaomi Toolkit","text":"Vào Setup, Tối ưu nhấn Tất cả, rồi vào Kiểm tra để xem và sửa các mục còn bỏ sót."}]}</script>
+<style>body{margin:0;background:#f6f7fb;color:#172033;font:17px/1.7 system-ui,-apple-system,"Segoe UI",sans-serif}main{max-width:900px;margin:28px auto 60px;padding:0 22px}.card{background:#fff;border:1px solid #e2e6ee;border-radius:18px;padding:clamp(24px,5vw,46px);margin-bottom:20px}h1{font-size:clamp(32px,5vw,52px);line-height:1.15;margin:8px 0 18px}h2{font-size:27px;line-height:1.3;margin-top:0}h3{font-size:20px;margin-bottom:6px}p,li{color:#566176}.note{border-left:4px solid #b42318;background:#fff4f2;padding:14px 16px;margin:18px 0}.eyebrow{color:#b42318;font-weight:750;letter-spacing:.05em;text-transform:uppercase;font-size:13px}.button{display:inline-block;background:#1b263b;color:#fff;padding:10px 15px;border-radius:9px;text-decoration:none;font-weight:700;margin:4px 8px 4px 0}.button.alt{background:#edf2fa;color:#174ea6}</style>
+</head><body><main>
+<article class="card"><p class="eyebrow">Xiaomi Toolkit · hướng dẫn kích hoạt Shizuku</p><h1>Hướng dẫn kích hoạt Shizuku để chạy Xiaomi Toolkit</h1><p>Bài này hướng dẫn cách bật các quyền cần thiết, ghép nối và kích hoạt Shizuku để chạy Xiaomi Toolkit trên MIUI và HyperOS, đặc biệt các máy Xiaomi nội địa Trung Quốc. Sau khi Shizuku chạy, bạn có thể dùng Xiaomi Toolkit để tối ưu máy và fix thông báo.</p><a class="button" href="https://github.com/minhtiencr123/Xiaomi-Toolkit">Mở Xiaomi Toolkit trên GitHub</a><a class="button alt" href="https://github.com/minhtiencr123/Xiaomi-Toolkit/releases">Tải APK mới nhất</a></article>
+<section class="card"><h2>Chuẩn bị trước khi làm</h2><ul><li>Điện thoại Xiaomi đang chạy MIUI hoặc HyperOS.</li><li>Cài <a href="https://shizuku.rikka.app/download/">Shizuku</a> và Xiaomi Toolkit.</li><li>Kết nối Wi-Fi ổn định.</li></ul></section>
+<section class="card"><h2>1. Bật Tùy chọn nhà phát triển</h2><ol><li>Mở <strong>Cài đặt</strong> → <strong>Giới thiệu điện thoại</strong>.</li><li>Chạm liên tiếp khoảng 7 lần vào <strong>Phiên bản MIUI</strong> hoặc <strong>Phiên bản HyperOS</strong>.</li><li>Mở <strong>Cài đặt bổ sung</strong> → <strong>Tùy chọn nhà phát triển</strong>.</li></ol></section>
+<section class="card"><h2>2. Bật các mục gỡ lỗi cần thiết</h2><h3>Gỡ lỗi USB</h3><p>Trong <strong>Tùy chọn nhà phát triển</strong>, bật <strong>Gỡ lỗi USB</strong> rồi chấp nhận cảnh báo.</p><h3>Gỡ lỗi USB (Cài đặt bảo mật)</h3><p>Bật thêm <strong>Gỡ lỗi USB (Cài đặt bảo mật)</strong>. Đây là mục thường bị bỏ qua khiến khi bắt đầu Shizuku bị treo hoặc Xiaomi Toolkit không thực hiện được thao tác hệ thống.</p><h3>Gỡ lỗi không dây</h3><p>Bật <strong>Gỡ lỗi không dây</strong> để ghép nối Shizuku qua Wi-Fi.</p><div class="note"><strong>Nếu không thấy Gỡ lỗi USB (Cài đặt bảo mật):</strong> hãy tìm mục tương tự trong Tùy chọn nhà phát triển. Không phải model hoặc bản MIUI/HyperOS nào cũng có mục này.</div></section>
+<section class="card"><h2>3. Ghép nối Shizuku</h2><ol><li>Chạm vào <strong>Gỡ lỗi không dây</strong> → <strong>Ghép nối thiết bị bằng mã ghép nối</strong>.</li><li>Sẽ có hộp thoại hiện một mã gồm <strong>6 chữ số</strong>. Ghi nhớ mã này.</li><li>Kéo thanh thông báo của điện thoại xuống, mở thông báo <strong>Gỡ lỗi không dây</strong> và nhập 6 chữ số vừa ghi nhớ.</li><li>Nhấn <strong>Ghép nối</strong>.</li></ol></section>
+<section class="card"><h2>4. Bắt đầu Shizuku</h2><ol><li>Vào lại ứng dụng <strong>Shizuku</strong>.</li><li>Nhấn <strong>Bắt đầu</strong> và chờ đến khi Shizuku báo đang chạy xong.</li></ol><div class="note"><strong>Nếu Shizuku bị treo:</strong> kiểm tra lại <strong>Gỡ lỗi USB</strong>, <strong>Gỡ lỗi USB (Cài đặt bảo mật)</strong> và <strong>Gỡ lỗi không dây</strong>; sau đó ghép nối lại bằng mã mới rồi nhấn <strong>Bắt đầu</strong>.</div></section>
+<section class="card"><h2>5. Dùng Xiaomi Toolkit</h2><ol><li>Mở Xiaomi Toolkit. Khi Android hỏi cấp quyền Shizuku, chọn <strong>Cho phép</strong>.</li><li>Vào <strong>Setup</strong> để đổi sang tiếng Việt, gỡ bloatware và cài CH Play.</li><li>Vào <strong>Tối ưu</strong>, nhấn nút <strong>Tất cả</strong> để fix thông báo. Các mục tùy chọn khác có thể xem bằng cách bấm vào chữ <strong>i</strong> bên cạnh nút để đọc mô tả.</li><li>Vào <strong>Kiểm tra</strong> để kiểm tra tiến trình còn bỏ sót mục nào không và sửa chữa nếu có.</li><li>Có thể tắt <strong>Tùy chọn nhà phát triển</strong> để tiếp tục sử dụng bình thường các ứng dụng ngân hàng, VNeID và ứng dụng khác. Nếu sau này khởi động lại máy bị mất thông báo, bật lại các mục gỡ lỗi cần thiết, mở Shizuku nhấn <strong>Bắt đầu</strong>, rồi vào <strong>Tối ưu</strong> nhấn nút <strong>Tất cả</strong> là xong.</li></ol></section>
+<section class="card"><h2>Lỗi thường gặp</h2><h3>Shizuku báo chưa chạy</h3><p>Ghép nối lại bằng mã mới, sau đó mở Shizuku và nhấn Bắt đầu.</p><h3>Xiaomi Toolkit không nhận quyền</h3><p>Mở Shizuku trước, vào danh sách ứng dụng được cấp quyền và cho phép Xiaomi Toolkit.</p><h3>Thông báo vẫn chậm sau khi tối ưu</h3><p>Vào Tối ưu nhấn Tất cả, sau đó vào Kiểm tra để xem các mục còn bỏ sót.</p></section>
+<section class="card"><h2>Tải Xiaomi Toolkit</h2><p>Đọc README để xem đầy đủ chức năng và tải bản phát hành mới nhất từ GitHub Releases.</p><a class="button" href="https://github.com/minhtiencr123/Xiaomi-Toolkit/releases">GitHub Releases</a><a class="button alt" href="https://github.com/minhtiencr123/Xiaomi-Toolkit">README Xiaomi Toolkit</a></section>
+</main><footer>Hướng dẫn kích hoạt Shizuku để chạy Xiaomi Toolkit · Không cần root</footer></body></html>
